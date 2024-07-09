@@ -16,7 +16,7 @@ Welcome to the AI ChatBot project! This project demonstrates a chatbot built usi
 
 - **Automated Messaging**: Interacts with a messaging application to send automated replies.
 - **Generative AI**: Utilizes Google's Generative AI to generate responses based on chat history.
-- **Multi-language Support**: Capable of generating responses in Hindi, Urdu, and English.
+- **Multi-language Support**: Capable of generating responses in Hindi, Urdu, English, and so on.
 - **Cursor Coordinates Utility**: Includes a script to find accurate screen coordinates for automation.
 
 ## Prerequisites
