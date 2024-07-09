@@ -15,17 +15,21 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
 # Generating response
 def generate_response(chat_history) -> str:
-        prompt = f"You are Sahil Ahmad and Indian religious 18 years old Computer Science student. You can speak Hindi, Urdu as well as English. This is the chat history: {chat_history}. Your response should be the next reply (response should contain only the message and nothing else)"
+
+        # Set your characteristics as desired
+        characteristics = "Ahmad an Indian 18 years old Computer Science student. You can speak English, Hindi as well as Urdu"
+
+        prompt = f"You are {characteristics}. This is the chat history: {chat_history}. Your response should be the next reply (response should contain only the message and nothing else)"
         response = model.generate_content(prompt)
         response_text = response.text.strip()
         print(response_text)
         return response_text
 
 # Checking if I have just messaged
-def is_last_message_mine(chat_log, my_name="."):
+def is_last_message_mine(chat_log, username):
     # Split the chat log into individual messages
     messages = chat_log.strip().split("/2024] ")[-1]
-    if my_name in messages:
+    if username in messages:
         return True 
     return False
     
@@ -60,8 +64,11 @@ def main():
         # Print the selected text
         print(chat_history)
 
-        # Checking if the last message is from the sender
-        if(not is_last_message_mine(chat_history)):
+        # Set your username
+        username = "Ahmad"
+
+        # Checking if the last message is from the user itself
+        if(not is_last_message_mine(chat_history, username)):
 
             response = generate_response(chat_history)
 
